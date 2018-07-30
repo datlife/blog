@@ -1,7 +1,7 @@
 """Post Model."""
 from datetime import datetime
 from slugify import slugify
-from blog.models.base import SurrogatePK, db
+from blog.database import SurrogatePK, db
 
 class Post(SurrogatePK, db.Model):
 

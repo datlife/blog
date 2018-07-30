@@ -1,5 +1,5 @@
 """User Model."""
-from blog.models.base import SurrogatePK, db
+from blog.database import SurrogatePK, db
 
 class User(SurrogatePK, db.Model):
     # limit str to 64 optimizing memory footprint

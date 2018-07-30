@@ -1,10 +1,8 @@
 from flask import Flask
-from flask.helpers import get_debug_flag
-from blog.exntesions import db, migrate
+from blog.extensions import db, migrate
 from blog.models import User, Post
-from blog.settings import DevConfig, ProdConfig
 
-def create_app(config_name=DevConfig):
+def create_app(config_name):
     """Factory pattern:
     http://flask.pocoo.org/docs/1.0/patterns/appfactories/ 
     """
@@ -17,9 +15,7 @@ def create_app(config_name=DevConfig):
 
 def register_extensions(app):
     """Register Flask extenstions."""
-    with app.app_context():
-        db.init_app(app)
-    
+    db.init_app(app)
     migrate.init_app(app, db)
 
 
@@ -32,5 +28,4 @@ def register_shellcontext(app):
             'User': User,
             'Post': Post,
         }
-
     app.shell_context_processor(shell_context)
