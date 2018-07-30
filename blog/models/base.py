@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy, Model
+from blog.compat import basestring
 
 class CRUDMixin(Model):
     """Mixin that adds convenience methods for CRUD (create, read, update, 
@@ -28,7 +29,7 @@ class CRUDMixin(Model):
         db.session.delete(self)
         return commit and db.session.commit()
 
-db = SQLAlchemy()
+db = SQLAlchemy(model_class=CRUDMixin)
 
 # From Mike Bayer's "Building the app" talk
 # https://speakerdeck.com/zzzeek/building-the-app
@@ -36,7 +37,6 @@ class SurrogatePK(object):
     """A mixin that adds a surrogate integer 'primary key' column named ``id`` \
         to any declarative-mapped class.
     """
-
     __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
