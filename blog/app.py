@@ -1,5 +1,5 @@
 from flask import Flask
-from blog.extensions import db, migrate
+from blog.extensions import db, migrate, admin, ModelView
 from blog.models import User, Post, Tags
 
 
@@ -18,6 +18,11 @@ def register_extensions(app):
     db.init_app(app)
     migrate.init_app(app, db)
 
+    # Init a GUI Admin Page for database management
+    admin.init_app(app)
+    admin.add_view(ModelView(Post, db.session))
+    admin.add_view(ModelView(User, db.session))
+
 
 def register_shellcontext(app):
     """Register shell context objects."""
@@ -30,3 +35,4 @@ def register_shellcontext(app):
             'Tag': Tags
         }
     app.shell_context_processor(shell_context)
+
