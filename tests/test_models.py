@@ -10,7 +10,7 @@ class TestPost:
         assert isinstance(post.created, dt.datetime)
         assert bool(post.slug)  
 
-    def test_add_tag(self, user):
+    def test_add_tag(self):
         post = Post('foo_title', 'foo_description', 'foo_body')
         post.save()
         t = Tags(tagname='python')
@@ -19,7 +19,7 @@ class TestPost:
         assert post.add_tag(t1)
         assert len(post.tag_list) == 2
 
-    def test_remove_tag(self, user):
+    def test_remove_tag(self):
         post = Post('foo_title', 'foo_description', 'foo_body')
         post.save()
         t1 = Tags(tagname='flask')
@@ -44,6 +44,6 @@ class TestUser:
     def test_check_password(self):
         """Check password."""
         user = User.create(username='foo', email='foo@bar.com',
-                           password='foobarbaz123')
-        assert user.check_password('foobarbaz123')
-        assert not user.check_password('barfoobaz')
+                           password='foo_password')
+        assert user.check_password('foo_password')
+        assert not user.check_password('foo_password1')

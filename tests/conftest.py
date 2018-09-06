@@ -8,7 +8,6 @@ from blog.app import create_blog_app
 from blog.database import db as _db
 from blog.config import TestConfig
 
-from .factories import UserFactory
 
 @pytest.yield_fixture(scope='function')
 def app():
@@ -40,10 +39,3 @@ def db(app):
     # Explicitly close DB connection
     _db.session.close()
     _db.drop_all()
-
-@pytest.fixture
-def user():
-    """Create a mock user for all tests."""
-    class User():
-        def get():
-            mock_user = UserFactory(password='icandoit')
