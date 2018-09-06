@@ -5,10 +5,8 @@ from datetime import timedelta
 
 class _BaseConfig():
     """Base Configuration for Blog App."""
-    # Your current terminal should have $SERVER_SECRET_KEY$ variable
-    SECRET_KEY = os.environ.get('SERVER_SECRET_KEY')
 
-    # Import current directory
+    SECRET_KEY = os.environ.get('SERVER_SECRET_KEY')
     APP_DIR = os.path.abspath(os.path.dirname(__file__))  # This directory
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
     CACHE_TYPE = 'simple'  # Or 'memcached', 'redis', etc.
@@ -20,8 +18,7 @@ class ProdConfig(_BaseConfig):
 
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL',
-                                             'postgresql://localhost/example')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', 'anydatabase:///')
 
 
 class DevConfig(_BaseConfig):
@@ -41,9 +38,9 @@ class DevConfig(_BaseConfig):
 
 class TestConfig(_BaseConfig):
     """Test configuration."""
+    
     TESTING = True
     DEBUG = True
-    # For Test, we use in-memory database
     SQLALCHEMY_DATABASE_URI = 'sqlite://'
     # For faster tests; needs at least 4 to avoid "ValueError: Invalid rounds"
     BCRYPT_LOG_ROUNDS = 4

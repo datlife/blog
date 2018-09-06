@@ -1,14 +1,17 @@
+"""Handle Exceptions. """
 from flask import jsonify
 
 
 def template(data, code=500):
+    """Generic Template for generating  exception in JSON."""
     return {'message': {'errors': {'body': data}}, 'status_code': code}
 
-UKNOWN_ERROR = template([], code=500)
-ARTICLE_NOT_FOUND = template(['Article not found'], code=404)
+UNKOWN_ERROR = template([], code=500)
+POST_NOT_FOUND = template(['Post not found'], code=404)
 
 
 class InvalidUsage(Exception):
+    """InvalidUsage object for Blog App."""
     status_code = 500
 
     def __init__(self, message, status_code=None, payload=None):
@@ -23,9 +26,9 @@ class InvalidUsage(Exception):
         return jsonify(rv)
 
     @classmethod
-    def uknown_error(cls):
-        return cls(**UKNOWN_ERROR)
+    def unknown_error(cls):
+        return cls(**UNKOWN_ERROR)
 
     @classmethod
     def article_not_found(cls):
-        return cls(**ARTICLE_NOT_FOUND)
+        return cls(**POST_NOT_FOUND)

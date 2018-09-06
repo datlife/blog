@@ -29,8 +29,6 @@ class CRUDMixin(Model):
         return commit and db.session.commit()
 
 db = SQLAlchemy(model_class=CRUDMixin)
-
-
 # Alias common SQLAlchemy names
 Column = db.Column
 relationship = relationship
