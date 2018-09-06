@@ -16,16 +16,21 @@ class User(Model):
     def __repr__(self):   # Display class in console, for debugging
         return '<User {}>'.format(self.username)
 
-    def __init__(self, username, email, password=None, **kwargs):
+    def __init__(self, username="", email="", password=None, **kwargs):
         """Create User instance."""
         db.Model.__init__(self, username=username, email=email, **kwargs)
         if password:
             self.set_password(password)
         else:
             self.password = None
+    def __setattr__(self, name, value):
+        if name in 'password':
+            super(User, self).__setattr__(name, bcrypt.generate_password_hash(value))
+        else:
+            super(User, self).__setattr__(name, value)
 
-    def set_password(self, password):
-        self.password = bcrypt.generate_password_hash(password)
+    def set_password(self, new_password):
+        self.password = bcrypt.generate_password_hash(new_password)
 
     def check_password(self, value):
         return bcrypt.check_password_hash(self.password, value)
