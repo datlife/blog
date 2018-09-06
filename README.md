@@ -9,3 +9,22 @@ export FLASK_APP=server.py
 ```
 flask run
 ```
+
+3. Working with database
+
+* Init database for the first time
+```
+flask db init
+flask db migrate  # make sure 'flask-migrate can detect models directory'
+flask db upgrade
+```
+
+* Useful commands
+```
+# View History
+flask db history
+
+# Check current migration
+flask db current
+
+```

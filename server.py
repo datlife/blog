@@ -1,12 +1,6 @@
-"""Create an application instance."""
+"""Create a blog app instance."""
 from flask.helpers import get_debug_flag
-from blog.app import create_app
-from blog.settings import DevConfig, ProdConfig
+from blog.app import create_blog_app
+from blog.config import DevConfig, ProdConfig
 
-# Create Flask App
-app = create_app(DevConfig if get_debug_flag() else ProdConfig)
-
-@app.route('/')
-@app.route('/index')
-def index():
-    return 'Hello, World!'
+app = create_blog_app(DevConfig if get_debug_flag() else ProdConfig)
