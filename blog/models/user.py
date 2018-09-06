@@ -25,7 +25,8 @@ class User(Model):
             self.password = None
     def __setattr__(self, name, value):
         if name in 'password':
-            super(User, self).__setattr__(name, bcrypt.generate_password_hash(value))
+            if value:
+                super(User, self).__setattr__(name, bcrypt.generate_password_hash(value))
         else:
             super(User, self).__setattr__(name, value)
 

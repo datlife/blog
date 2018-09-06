@@ -36,7 +36,7 @@ class Post(db.Model):
     def __repr__(self):   # Display class in console, for debugging
         return '<Post {}>'.format(self.body)
 
-    def __init__(self, title, description, body, slug=None, **kwargs):
+    def __init__(self, title="", description="", body="", slug=None, **kwargs):
         db.Model.__init__(self,
                           title=title,
                           description=description,
