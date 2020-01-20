@@ -1,30 +1,14 @@
+# Personal site with Hugo
 
-1. Export Development Environment
-```shell
-export FLASK_ENVIRONMENT=development
-export FLASK_DEBUG=1
-export FLASK_APP=server.py
+## Dev
+
+* start dev server locally
 ```
-2. Run Flask
-```
-flask run
+hugo server -D
 ```
 
-3. Working with database
+## Publish
 
-* Init database for the first time
 ```
-flask db init
-flask db migrate  # make sure 'flask-migrate can detect models directory'
-flask db upgrade
-```
-
-* Useful commands
-```
-# View History
-flask db history
-
-# Check current migration
-flask db current
-
+./deploy.sh "add new post"
 ```
