@@ -1,6 +1,8 @@
 ---
 title: "About"
 draft: false
+displayInMenu: false
+displayInList: false
 ---
 ###  Introduction
 Thank you for visiting my site. I recently graduated from UC Davis in Computer Science. Admittedly, this is my (N + 1)th attempt to create a blog.

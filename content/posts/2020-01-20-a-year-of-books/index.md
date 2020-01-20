@@ -39,4 +39,6 @@ This year, 2020, I decided to make a wishlist of books I would like to read in 2
 
 ### Note to myself:
 Formally, reading book or taking a class is a means to access information.
-In 2020, an interesting phenomenon about how one accessed to information is *very* different than 20 years ago. We have now blog posts, articles, tutorials, youtube influencers, and many other channels to access information. As a result, it is important for info consumers to be *selective* and *thoughtful* about the information.
+In recent years, an interesting phenomenon about how one accessed to information is *very* different than 20 years ago. 
+
+We have now blog posts, youtubers, and many other channels to access information. That is great! However, it is important for info consumers to be *selective* and *thoughtful* about what information to trust.
