@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@personal.github.com:/datlife/datlife.github.io
+	branch = master
