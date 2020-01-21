@@ -2,19 +2,13 @@
 title: "2020 - The Year in Books"
 date: 2020-01-20T10:35:35-05:00
 categories: ["life","goals"]
-dropCap: true
-displayInMenu: false
-displayInList: true
-draft: true
+draft: false
 summary: "A wishlist of books I'd like to read in 2020."
-resources:
-- name: featuredImage
-  src: "featured.jpg"
 ---
 
-> During childhood, books were my mentors, my friends, and my parallel reality. It played a significant role in my satisfaction for exploring the world. After college graduation, I finally have now more free time to revisit my childhood hobby.
+> During childhood, books were my mentors, my friends, and my parallel reality. It played a significant role in my satisfaction for exploring the world. After college graduation, I finally have more free time to revisit my childhood hobby.
 
-This year, 2020, I decided to make a wishlist of books I would like to read in 2020. I may adjust this list depending my free time and priorities.
+This year, 2020, I decided to make a wishlist of books I would like to read. I may adjust this list depending my free time and priorities.
 
 ### Career Development
 * Code Complete 2 -  <span class="author">Steve McConnell, 2004.</span>
