@@ -2,6 +2,7 @@ baseURL = "https://datlife.github.io/"
 languageCode = "en-us"
 title = "YOLO!"
 theme = "paper"
+enableEmoji = true
 
 [params]
 brand = "Dat's Blog"
