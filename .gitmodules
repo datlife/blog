@@ -1,7 +1,3 @@
-[submodule "public"]
-	path = public
-	url = git@github.com:/datlife/datlife.github.io
-	branch = master
 [submodule "themes/paper"]
 	path = themes/paper
 	url = git@github.com:datlife/hugo-paper.git
