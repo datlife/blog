@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    environment: github-page build
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
