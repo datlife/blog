@@ -5,10 +5,21 @@ theme = "paper"
 enableEmoji = true
 
 [params]
-brand = "Dat's Blog"
-description = "The website's description"
-# whether you would like a RSS feed link to appear in the navigation menu (true, false) - optional
-rssinmenu = false
+  color = 'linen'
+  twitter = 'datfreedom'
+  github = 'datlife'
+  avatar = 'tdat.nguyen93@gmail.com'
+  name = 'Dat (Andy) Nguyen'
+  bio = 'Yesterday is history, tomorrow is a mystery and today is a gift of God, which is why we call it present. Live in the now, grind for the future ❤️'
+# ------------------------------
+
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+#  [markup.highlight]
+#    lineNos = true
 
 [menu]
   [[menu.main]]
@@ -16,6 +27,33 @@ rssinmenu = false
     name = "about"
     pre = "<i class='fa fa-heart'></i>"
     url = "/about/"
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,
